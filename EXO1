@@ -1,0 +1,45 @@
+Modes de rendu des frameworks JavaScript
+Objectif de l’exercice
+Comprendre quels frameworks JavaScript supportent les différents modes de rendu des pages web :
+
+ SSG (Static Site Generation): la page est générée à l’avance, lors du build
+ISR (Incremental Static Regeneration) : la page est statique mais se régénère automatiquement après un certain temps
+SSR (Server Side Rendering): la page est générée à chaque requête
+
+Énoncé de l’exercice
+
+Pour chacun des frameworks ci-dessous, indiquez s’il supporte ou non les modes de rendu suivants : SSG, ISR et SSR.
+
+Instructions
+
+ Mettez un `X` dans la case correspondante lorsque le framework supporte le mode de rendu.  
+Laissez la case vide si le mode n’est pas supporté.
+
+
+
+TABLEAU DES FRAMEWORKS
+
+| Framework               | SSG | ISR | SSR |
+|-------------------------|-----|-----|-----|
+| Next.js                 | X   | X   | X   |
+| Nuxt.js                 | X   | X   | X   |
+| NestJS                  |     |     | X   |
+| SvelteKit               | X   |     | X   |
+| Remix                   |     |     | X   |
+| Gatsby                  | X   |     |     |
+| Astro                   | X   |     | X   |
+| Angular (Universal)     |     |     | X   |
+| Vue.js (Vite)           | X   |     |     |
+| Qwik                    | X   | X   | X   |
+
+
+
+
+Next.js / Nuxt.js / Qwik : supportent SSG, ISR et SSR.  
+NestJS : framework backend → SSR seulement.  
+SvelteKit / Astro : supportent SSG et SSR, ISR non natif.  
+Remix** : SSR uniquement.  
+Gatsby / Vue.js (Vite)** : SSG principalement, SSR limité.  
+Angular Universal** : SSR uniquement.
+
+

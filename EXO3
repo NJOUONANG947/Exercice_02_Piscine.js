@@ -1,0 +1,87 @@
+ Comparer Node.js et le Navigateur Web
+
+ Objectif général
+Comprendre les différences fondamentales entre :
+
+Node.js: environnement d’exécution côté serveur  
+Navigateur Web: environnement d’exécution côté client  
+
+Même langage (JavaScript), environnements différents.
+
+
+Tableau 1 – Environnement d’exécution
+
+| Critère                  | Node.js | Navigateur |
+|---------------------------|---------|------------|
+| Exécute JavaScript        | ✔       | ✔          |
+| Côté serveur              | ✔       | ✖          |
+| Côté client               | ✖       | ✔          |
+| Accès au DOM              | ✖       | ✔          |
+| Accès au système de fichiers | ✔    | ✖          |
+| Accès au réseau bas niveau | ✔      | ✖          |
+
+> **Justification** : Node.js permet d’accéder au système de fichiers et aux sockets réseau directement, alors que le navigateur est limité au DOM et aux requêtes réseau via HTTP/HTTPS.
+
+
+
+Tableau 2 – APIs disponibles
+
+| API / Fonctionnalité | Node.js | Navigateur |
+|---------------------|---------|------------|
+| DOM                 | ✖       | ✔          |
+| fs (file system)    | ✔       | ✖          |
+| http                | ✔       | ✖ (limité via fetch/XHR) |
+| fetch               | ✔ (depuis Node 18) | ✔ |
+| localStorage        | ✖       | ✔          |
+| process             | ✔       | ✖          |
+
+Justification : Les APIs sont spécifiques à chaque environnement : `fs` et `process` n’existent que côté serveur, alors que `localStorage` et `DOM` sont côté client.
+
+Tableau 3 – Sécurité et contraintes
+
+| Critère           | Node.js | Navigateur |
+|------------------|---------|------------|
+| Accès disque libre | ✔      | ✖          |
+| Sandbox de sécurité | ✖      | ✔          |
+| Accès matériel     | ✔      | ✖ (limité) |
+| Isolation du code  | ✖      | ✔          |
+
+Justification: Le navigateur exécute le code JavaScript dans une sandbox pour protéger l’utilisateur, alors que Node.js a un accès complet au système, donc moins de restrictions.
+
+
+
+ Tableau 4 – Cas d’usage
+
+| Cas d’usage         | Node.js | Navigateur |
+|--------------------|---------|------------|
+| API backend         | ✔       | ✖          |
+| Interface utilisateur | ✖     | ✔          |
+| Traitement de fichiers | ✔    | ✖          |
+| Validation de formulaire | ✖  | ✔          |
+| Temps réel (WebSocket) | ✔    | ✔          |
+
+> **Justification** : Le Node.js est idéal pour les API backend et le traitement de fichiers, tandis que le navigateur gère l’interface utilisateur et la validation côté client. WebSocket peut être utilisé dans les deux environnements pour le temps réel.
+
+
+ Tableau 5 – Performance et exécution
+
+| Critère                | Node.js | Navigateur |
+|------------------------|---------|------------|
+| Event Loop             | ✔       | ✔          |
+| Multithreading         | ✖ (single-thread mais worker threads possibles) | ✖ (single-thread mais Web Workers possibles) |
+| Longs calculs          | ✔ (attention blocage) | ✖ (bloque l’UI) |
+| Interaction utilisateur | ✖      | ✔          |
+
+Justification: Node.js et le navigateur utilisent tous deux l’Event Loop pour gérer l’asynchronicité, mais l’UI n’existe que dans le navigateur. Les calculs longs bloquent le thread principal dans le navigateur.
+
+
+
+ Question de synthèse
+
+**Pourquoi JavaScript se comporte-t-il différemment dans Node.js et dans le navigateur ?**  
+
+> Node.js et le navigateur utilisent JavaScript, mais n’offrent pas les mêmes capacités ni les mêmes responsabilités.  
+> Node.js est conçu pour le serveur avec accès aux fichiers, réseau et processus.  
+> Le navigateur est conçu pour l’interface utilisateur et la sécurité, avec accès au DOM et aux APIs côté client.  
+> Les différences viennent donc des **environnements d’exécution et des restrictions de sécurité**.  
+> Le même langage fonctionne, mais les objets et APIs disponibles diffèrent.

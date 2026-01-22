@@ -1,0 +1,46 @@
+Frontend, Backend et Full-stack dans les frameworks JavaScript
+
+ Objectif de l’exercice
+Comprendre le rôle principal des frameworks JavaScript et savoir les classer selon qu’ils sont :
+Frontend: pour créer l’interface utilisateur (HTML, CSS, interactions dans le navigateur).  
+Backend: pour gérer la logique serveur, les API, la sécurité et l’accès aux données.  
+Full-stack: capable de gérer à la fois le frontend et le backend dans un même projet.
+
+Énoncé de l’exercice
+Pour chacun des frameworks ci-dessous, indiquez s’il est principalement utilisé pour :
+
+le Frontend 
+ le Backend
+ le Full-stack
+
+Instructions 
+ Mettez un `X` dans la case correspondante.  
+ Un framework ne doit avoir qu’une seule case cochée.
+
+| Framework         | Frontend | Backend | Full-stack |
+|------------------|---------|---------|------------|
+| Next.js           |         |         | X          |
+| Nuxt.js           |         |         | X          |
+| NestJS            |         | X       |            |
+| React             | X       |         |            |
+| Angular           | X       |         |            |
+| Vue.js            | X       |         |            |
+| Svelte            | X       |         |            |
+| Express.js        |         | X       |            |
+| Remix             |         |         | X          |
+| Astro             | X       |         |            |
+
+---
+
+Explications
+
+Next.js: Full-stack, utilise React pour le frontend et permet de créer des API côté serveur pour le backend.  
+Nuxt.js: Full-stack, basé sur Vue.js pour le frontend et permet des routes API côté serveur pour gérer le backend.  
+NestJS : Backend uniquement, framework Node.js pour gérer les API, la logique serveur et la sécurité.  
+React : Frontend uniquement, librairie pour créer des interfaces utilisateur interactives dans le navigateur.  
+Angular: Frontend uniquement, framework complet pour construire des applications web côté client.  
+Vue.js : Frontend uniquement, framework léger pour créer des interfaces réactives côté navigateur.  
+Svelte : Frontend uniquement, compile le code en JavaScript optimisé pour le navigateur.  
+Express.js : Backend uniquement, framework minimaliste pour Node.js pour créer des serveurs et APIs.  
+Remix : Full-stack, basé sur React, gère le frontend et le backend (SSR) côté serveur.  
+Astro: Frontend principalement, génère des pages statiques et des composants côté client, backend limité.
